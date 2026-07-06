@@ -1,15 +1,15 @@
 import mongoose from 'mongoose';
 
-const connectionString = process.env.MONGODB_URI || 'mongodb://localhost:27017/octofit_db';
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost:27017/octofit-tracker';
 
 /**
- * Seed the octofit_db database with test data
+ * Seed the octofit-tracker database with test data
  */
 async function seedDatabase() {
   try {
-    await mongoose.connect(connectionString);
+    await mongoose.connect(MONGODB_URI);
 
-    console.log('Connected to octofit_db');
+    console.log('Connected to octofit-tracker database on port 27017');
 
     // TODO: Add seed data for users, teams, activities, leaderboard, and workouts
 
